@@ -7,11 +7,13 @@ public class MergeSort {
 
     public static void main (String[] args){
         int mergeSortArray[]={2,5,1,9,3,6,8,4,7,0};
+        //int mergeSortArray[]={12,11,13,5,6,7 };
         int leftIndex=0;
         int rightIndex=mergeSortArray.length-1;
         MergeSort mergeSort = new MergeSort();
         mergeSort.printMergeSortArray(mergeSortArray);
         mergeSort.splitArray(mergeSortArray,leftIndex,rightIndex);
+        mergeSort.printMergeSortArray(mergeSortArray);
     }
 
     private void printMergeSortArray(int array[])
@@ -83,9 +85,7 @@ public class MergeSort {
     {
         if(leftIndex<rightIndex){
             int middleIndex=(leftIndex+rightIndex)/2;
-            printMergeSortArray(array);
             splitArray(array,leftIndex,middleIndex);
-            printMergeSortArray(array);
             splitArray(array,middleIndex+1,rightIndex);
             merge(array, leftIndex, middleIndex, rightIndex);
         }
